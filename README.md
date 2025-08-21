@@ -1,23 +1,44 @@
 # My Flask Application
 
-This repository contains the code to a simple Flask appliation.  The goal of this appliation is to use a simple trained model to generate an anomoly score from incoming data.
-In this case the data domes from another file that simulated real life data. 
+This repository contains the code for a simple Flask application.
+The goal of this application is to use a trained anomaly detection model to generate an anomaly score from incoming sensor data.
 
-pip instal
+In this project, the sensor data is simulated to mimic real-life inputs (temperature, humidity, sound, etc.).
+
+## Installation
+
+Install dependencies:
+```shell
+pip install -r requirements.txt
+```
 
 ## Usage
 
-Train the model 
+Train the model
 ```shell
 python TrainModel.py
 ```
-Once the model is trained it is now callable.
 
-No run the FLASK application.
+Run the Flask application
 ```shell
 python FLASK.py
 ```
-Once the FLASK application is runing. Run the simulated data. A simulated data point will then be set every secord.
+
+The API will be available at:
+http://127.0.0.1:5000/predict
+
+Start sending simulated data
 ```shell
-python Simulated Data.py
+python SimulatedData.py
 ```
+
+A simulated data point will be sent every second to the Flask API.
+
+## Workflow
+
+TrainModel.py → trains and saves the anomaly detection model
+
+FLASK.py → hosts the REST API (/predict) for predictions
+
+SimulatedData.py → generates and sends fake sensor data to the API
+
