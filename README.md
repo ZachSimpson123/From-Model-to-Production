@@ -14,7 +14,7 @@ pip install -r requirements.txt
 
 ## Usage
 
-Train the model
+Train the model. Once trained a new file 'model.pkl' will be created. This is the file that contains the trained model and will be called by the flask application.
 ```shell
 python TrainModel.py
 ```
@@ -24,10 +24,7 @@ Run the Flask application
 python FLASK.py
 ```
 
-The API will be available at:
-http://127.0.0.1:5000/predict
-
-Start sending simulated data
+Start sending simulated data. Each time a result is returned it is saved into a csv file (anomaly_log.csv)
 ```shell
 python SimulatedData.py
 ```
